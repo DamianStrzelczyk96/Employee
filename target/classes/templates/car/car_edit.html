@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}" type="text/css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
+</head>
+<body class="p-3 mb-2 bg-dark text-white">
+<div th:replace="fragments/top_bar.html :: div.top-bar"></div>
+<div th:replace="fragments/scripts.html :: div.scripts-top-bar"></div>
+<hr>
+<div class="container">
+    <h2>Car Form</h2>
+    <div class="form-group">
+        <form action="#" th:action="@{/save_car}" th:object="${car}" method="post">
+            <input type="hidden" th:field="*{id}">
+            <input type="text" class="form-control" th:field="*{employees}" placeholder=" Employe"><br>
+            <input type="text" class="form-control" th:field="*{name}" placeholder=" Name"><br>
+            <input type="text" class="form-control" th:field="*{model}" placeholder="Model"><br>
+            <input type="text" class="form-control" th:field="*{registrationDate}" placeholder="Date"><br>
+            <input type="submit" th:value="Save" class="btn btn-danger">
+        </form>
+        <hr>
+    </div>
+</div>
+
+
+</body>
+</html>
